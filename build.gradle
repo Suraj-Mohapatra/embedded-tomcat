@@ -1,0 +1,33 @@
+plugins {
+    id 'war' // Apply the War plugin to package the application as a WAR file
+    id 'org.gretty' version '4.1.7' // Gretty plugin
+}
+
+group = 'com.uglyeagle'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21 // Use Java version that supports Jakarta EE 10
+    targetCompatibility = JavaVersion.VERSION_21 // Use Java version that supports Jakarta EE 10
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.0'
+}
+
+gretty {
+    contextPath = '/'
+    servletContainer = 'tomcat10'  // Use embedded Tomcat 10
+    httpPort = 8080
+    inplaceMode = 'soft' // Gretty will deploy from src/main/webapp. hard, hardcopy can also be used
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,4 +1,15 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          version="3.0">
     <display-name>My Embedded Tomcat App</display-name>
+
+<Servlet>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>com.uglyeagle.HelloServlet</servlet-class>
+</Servlet>
+
+<Servlet-Mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+</Servlet-Mapping>
+
 </web-app>

@@ -1,1 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/app"/>
 
+<!--
+1) Modern versions of Tomcat discourage setting the context path in /webapp/META-INF/context.xml.
+2) The context path can also be configured via the Cargo plugin in the pom.xml.
+3) If neither of the above is specified, Tomcat will use the WAR file name as the context path.
+The order of precedence is: 1 > 2 > 3.
+-->

@@ -1,1 +1,3 @@
- 
+gradle appRun  
+
+gradle tomcatRun

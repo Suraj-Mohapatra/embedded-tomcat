@@ -1,1 +1,3 @@
-It uses tomcat 9
+It uses tomcat 9  
+For, Maven  
+mvn clean package cargo:run

@@ -1,3 +1,5 @@
 It uses tomcat 9  
 For, Maven  
-mvn clean package cargo:run
+mvn clean package cargo:run  
+mvn cargo:redeploy
+

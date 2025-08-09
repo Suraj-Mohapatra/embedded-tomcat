@@ -17,9 +17,9 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <version>3.0.1</version>
             <scope>provided</scope>
-        </dependency>    
+        </dependency>
     </dependencies>
     
 
@@ -30,33 +30,24 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.0</version>
                 <configuration>
-                    <release>21</release>
+                    <!--<release>1.8</release> this will not work here-->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                     <fork>true</fork>
                 </configuration>
             </plugin>
-                       
-            <plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven3-plugin</artifactId>
-                <version>1.10.20</version>
-                <configuration>
-                    <container>
-                        <containerId>tomcat9x</containerId>
-                        <type>embedded</type>
-                    </container>
-                    <deployables>
-                        <deployable>
-                            <groupId>com.uglyeagle</groupId>
-                            <artifactId>embedded-tomcat</artifactId>
-                            <type>war</type>
-                            <properties>
-                                <context>/app</context>
-                            </properties>
-                        </deployable>
-                    </deployables>
-                </configuration>
-            </plugin>
             
+            <!-- Tomcat 7 Maven Plugin -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/app</path>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
+            </plugin>    
         </plugins>
         <finalName>embedded-tomcat</finalName>
     </build>

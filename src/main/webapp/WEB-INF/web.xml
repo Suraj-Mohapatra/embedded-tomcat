@@ -1,15 +1,28 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-    <display-name>My Embedded Tomcat App</display-name>
+    
+    <display-name>Tomcat7 JavaEE Demo</display-name>
 
-<Servlet>
-    <servlet-name>MyServlet</servlet-name>
-    <servlet-class>com.uglyeagle.HelloServlet</servlet-class>
-</Servlet>
+    <Servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>com.uglyeagle.HelloServlet</servlet-class>
+    </Servlet>
+    
+    <Servlet-Mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </Servlet-Mapping>
 
-<Servlet-Mapping>
-    <servlet-name>MyServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
-</Servlet-Mapping>
+    <servlet>
+        <servlet-name>fooJsp</servlet-name>
+        <jsp-file>/foo.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fooJsp</servlet-name>
+        <url-pattern>/foo</url-pattern>
+    </servlet-mapping>
 
 </web-app>

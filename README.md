@@ -1,8 +1,3 @@
-It uses tomcat 9  
+It uses tomcat 7  
 
-For, Maven  
-mvn clean package cargo:run  
-mvn cargo:redeploy
-
-For, Gradle  
-gradle clean build cargoRunLocal
+mvn tomcat7:run

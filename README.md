@@ -5,4 +5,6 @@ mvn clean package cargo:run
 mvn cargo:redeploy
 
 For, Gradle  
-gradle clean build cargoRunLocal
+gradle clean build cargoRunLocal  
+
+https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html

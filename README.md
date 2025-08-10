@@ -1,6 +1,6 @@
 Cargo plugin supports multiple embedded servlet containers [click to see ](https://codehaus-cargo.github.io/cargo/Containers.html)
 
-It uses tomcat 9  
+This demonstartes use of ftomcat 9  
 
 For, Maven  
 mvn clean package cargo:run  
